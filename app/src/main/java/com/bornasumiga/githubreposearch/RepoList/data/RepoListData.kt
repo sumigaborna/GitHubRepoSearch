@@ -6,4 +6,6 @@ data class RepoListResponse(
     val items : List<RepoListItems>
 )
 
-data class RepoListItems(val id:Int)
+data class RepoListItems(
+    val id:Int
+)
