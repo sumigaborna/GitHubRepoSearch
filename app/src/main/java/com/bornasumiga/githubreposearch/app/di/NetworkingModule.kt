@@ -1,8 +1,8 @@
 package com.bornasumiga.githubreposearch.di
 
-import com.bornasumiga.githubreposearch.common.GITHUB_BASE_URL
-import com.bornasumiga.githubreposearch.common.HTTP_CLIENT
-import com.bornasumiga.githubreposearch.common.NEWS_RETROFIT
+import com.bornasumiga.githubreposearch.app.common.GITHUB_BASE_URL
+import com.bornasumiga.githubreposearch.app.common.HTTP_CLIENT
+import com.bornasumiga.githubreposearch.app.common.NEWS_RETROFIT
 import okhttp3.Cache
 import okhttp3.CacheControl
 import okhttp3.Interceptor

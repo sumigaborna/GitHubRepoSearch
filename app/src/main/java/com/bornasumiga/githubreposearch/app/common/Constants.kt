@@ -1,4 +1,4 @@
-package com.bornasumiga.githubreposearch.common
+package com.bornasumiga.githubreposearch.app.common
 
 const val HTTP_CLIENT = "HTTP_CLIENT"
 const val NEWS_RETROFIT = "NEWS_RETROFIT"
