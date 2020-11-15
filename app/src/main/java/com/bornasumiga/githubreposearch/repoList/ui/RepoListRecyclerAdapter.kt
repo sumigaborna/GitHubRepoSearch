@@ -1,0 +1,3 @@
+package com.bornasumiga.githubreposearch.repoList.ui
+
+class RepoListRecyclerAdapter

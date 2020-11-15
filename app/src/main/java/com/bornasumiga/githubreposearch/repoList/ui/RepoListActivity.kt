@@ -23,7 +23,7 @@ class RepoListActivity : AppCompatActivity() {
         viewModel.repoListData.observe(
             this,
             Observer {
-
+                //TODO: Send to adapter
             }
         )
     }
