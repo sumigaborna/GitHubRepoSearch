@@ -1,4 +1,4 @@
-package com.bornasumiga.githubreposearch.RepoList.data
+package com.bornasumiga.githubreposearch.repoList.data
 
 data class RepoListResponse(
     val total_count : Int,
@@ -15,5 +15,5 @@ data class RepoListUI(
 )
 
 fun provideRepoListUI(repoListResponse: RepoListResponse):RepoListUI{
-    TODO()
+    return RepoListUI(repoListResponse.total_count.toString())
 }

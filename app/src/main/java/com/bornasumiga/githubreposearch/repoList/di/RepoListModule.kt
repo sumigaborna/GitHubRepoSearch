@@ -1,8 +1,8 @@
-package com.bornasumiga.githubreposearch.RepoList.di
+package com.bornasumiga.githubreposearch.repoList.di
 
-import com.bornasumiga.githubreposearch.RepoList.interactor.RepoListInteractor
-import com.bornasumiga.githubreposearch.RepoList.rest_interface.RepoListInterface
-import com.bornasumiga.githubreposearch.RepoList.view_model.RepoListViewModel
+import com.bornasumiga.githubreposearch.repoList.interactor.RepoListInteractor
+import com.bornasumiga.githubreposearch.repoList.rest_interface.RepoListInterface
+import com.bornasumiga.githubreposearch.repoList.view_model.RepoListViewModel
 import com.bornasumiga.githubreposearch.app.common.REPO_LIST_RETROFIT
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named

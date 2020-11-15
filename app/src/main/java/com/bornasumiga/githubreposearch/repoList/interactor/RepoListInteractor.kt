@@ -1,6 +1,6 @@
-package com.bornasumiga.githubreposearch.RepoList.interactor
+package com.bornasumiga.githubreposearch.repoList.interactor
 
-import com.bornasumiga.githubreposearch.RepoList.rest_interface.RepoListInterface
+import com.bornasumiga.githubreposearch.repoList.rest_interface.RepoListInterface
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 

@@ -1,11 +1,11 @@
-package com.bornasumiga.githubreposearch.RepoList.ui
+package com.bornasumiga.githubreposearch.repoList.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.lifecycle.Observer
 import com.bornasumiga.githubreposearch.R
-import com.bornasumiga.githubreposearch.RepoList.interactor.RepoListInteractor
-import com.bornasumiga.githubreposearch.RepoList.view_model.RepoListViewModel
+import com.bornasumiga.githubreposearch.repoList.view_model.RepoListViewModel
 import org.koin.android.ext.android.inject
 
 class RepoListActivity : AppCompatActivity() {
@@ -15,10 +15,18 @@ class RepoListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_repo_list)
+        observeLiveData()
         initUI()
     }
 
-    private fun initUI() {
+    private fun observeLiveData(){
+        viewModel.repoListData.observe(
+            this,
+            Observer {
 
+            }
+        )
     }
+
+    private fun initUI() = viewModel.getRepoList("DementiaHelper")
 }
