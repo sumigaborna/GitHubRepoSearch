@@ -1,5 +1,6 @@
 package com.bornasumiga.githubreposearch.repoList.ui
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,6 +31,9 @@ class RepoListRecyclerAdapter : RecyclerView.Adapter<RepoListRecyclerAdapter.Rep
 
     override fun onBindViewHolder(holder: RepoListViewHolder, position: Int) {
         holder.bind(repoList.items[position])
+        holder.itemView.setOnClickListener {
+            //TODO: LOGIC FOR OPENING DETAILS OF REPO
+        }
     }
 
     override fun getItemViewType(position: Int): Int = repoList.items[position].dataType
