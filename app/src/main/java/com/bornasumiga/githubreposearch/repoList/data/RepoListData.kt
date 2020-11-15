@@ -1,23 +1,35 @@
 package com.bornasumiga.githubreposearch.repoList.data
 
+import com.bornasumiga.githubreposearch.R
+
 data class RepoListResponse(
     val total_count : Int,
     val incomplete_results : Boolean,
-    val items : List<RepoListItem>
+    val items : List<RepoListResponseItem>
 )
 
-data class RepoListItem(
+data class RepoListResponseItem(
+    val id:Int,
+    val name:String,
+    val full_name:String,
+    val updated_at:String
+)
+
+data class RepoListUI(
+    val items: List<RepoListUIItem>
+)
+
+data class RepoListUIItem(
     val id:Int,
     val repoName:String,
     val lastUpdateTime:String,
     val dataType : Int
 )
 
-data class RepoListUI(
-    val items: List<RepoListItem> = mutableListOf()
-)
-
 fun provideRepoListUI(repoListResponse: RepoListResponse):RepoListUI{
-    //TODO: THIS IS TEMPORARY UNTIL DESIGN IS DECIDED
-    return RepoListUI(listOf())
+    val items = mutableListOf<RepoListUIItem>()
+    repoListResponse.items.forEach {
+        items.add(RepoListUIItem(it.id,it.full_name,it.updated_at, R.layout.item_repository))
+    }
+    return RepoListUI(items)
 }

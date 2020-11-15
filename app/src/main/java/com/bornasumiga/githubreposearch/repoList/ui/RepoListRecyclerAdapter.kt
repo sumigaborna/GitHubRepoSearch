@@ -5,13 +5,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bornasumiga.githubreposearch.R
-import com.bornasumiga.githubreposearch.repoList.data.RepoListItem
 import com.bornasumiga.githubreposearch.repoList.data.RepoListUI
+import com.bornasumiga.githubreposearch.repoList.data.RepoListUIItem
 import kotlinx.android.synthetic.main.item_repository.view.*
 
 class RepoListRecyclerAdapter : RecyclerView.Adapter<RepoListRecyclerAdapter.RepoListViewHolder>(){
 
-    private val repoList = RepoListUI()
+    private var repoList = RepoListUI(emptyList())
+
+    fun setData(repoListUI: RepoListUI){
+        repoList = repoListUI
+        notifyDataSetChanged()
+    }
 
     override fun getItemCount(): Int = repoList.items.size
 
@@ -30,7 +35,7 @@ class RepoListRecyclerAdapter : RecyclerView.Adapter<RepoListRecyclerAdapter.Rep
     override fun getItemViewType(position: Int): Int = repoList.items[position].dataType
 
     inner class RepoListViewHolder(view: View) : RecyclerView.ViewHolder(view){
-        override fun bind(item:RepoListItem){
+        fun bind(item:RepoListUIItem){
             itemView.tvItemRepoName.text = item.repoName
         }
     }
