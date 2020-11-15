@@ -11,6 +11,7 @@ import org.koin.android.ext.android.inject
 class RepoListActivity : AppCompatActivity() {
 
     private val viewModel by inject<RepoListViewModel>()
+    private val recyclerAdapter by inject<RepoListRecyclerAdapter>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,5 +29,8 @@ class RepoListActivity : AppCompatActivity() {
         )
     }
 
-    private fun initUI() = viewModel.getRepoList("DementiaHelper")
+    private fun initUI() {
+        viewModel.getRepoList("DementiaHelper")
+
+    }
 }
