@@ -4,7 +4,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-class RepoListRecyclerAdapter : RecyclerView.Adapter<RepoListViewHolder>(){
+class RepoListRecyclerAdapter : RecyclerView.Adapter<RepoListRecyclerAdapter.RepoListViewHolder>(){
 
     override fun getItemCount(): Int {
         TODO("Not yet implemented")
@@ -18,9 +18,10 @@ class RepoListRecyclerAdapter : RecyclerView.Adapter<RepoListViewHolder>(){
         TODO("Not yet implemented")
     }
 
+    inner class RepoListViewHolder(view: View) : RecyclerView.ViewHolder(view){
+
+    }
 }
 
-class RepoListViewHolder(view: View) : RecyclerView.ViewHolder(view){
 
-}
 
