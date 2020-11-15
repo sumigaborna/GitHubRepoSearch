@@ -3,17 +3,21 @@ package com.bornasumiga.githubreposearch.repoList.data
 data class RepoListResponse(
     val total_count : Int,
     val incomplete_results : Boolean,
-    val items : List<RepoListItems>
+    val items : List<RepoListItem>
 )
 
-data class RepoListItems(
-    val id:Int
+data class RepoListItem(
+    val id:Int,
+    val repoName:String,
+    val lastUpdateTime:String,
+    val dataType : Int
 )
 
 data class RepoListUI(
-    val temp : String
+    val items: List<RepoListItem> = mutableListOf()
 )
 
 fun provideRepoListUI(repoListResponse: RepoListResponse):RepoListUI{
-    return RepoListUI(repoListResponse.total_count.toString())
+    //TODO: THIS IS TEMPORARY UNTIL DESIGN IS DECIDED
+    return RepoListUI(listOf())
 }
