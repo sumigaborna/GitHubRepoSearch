@@ -9,3 +9,11 @@ data class RepoListResponse(
 data class RepoListItems(
     val id:Int
 )
+
+data class RepoListUI(
+    val temp : String
+)
+
+fun provideRepoListUI(repoListResponse: RepoListResponse):RepoListUI{
+    TODO()
+}
