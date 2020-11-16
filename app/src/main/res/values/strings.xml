@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GitHubRepoSearch</string>
+    <string name="repo_last_updated_at">Repo last updated at:</string>
 </resources>
