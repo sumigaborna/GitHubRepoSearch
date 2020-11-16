@@ -68,7 +68,4 @@ dependencies {
     //JODA TIME
     def joda_time_version = "2.10.4"
     implementation "joda-time:joda-time:$joda_time_version"
-
-    //SWIPE REFRESH
-    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 }
