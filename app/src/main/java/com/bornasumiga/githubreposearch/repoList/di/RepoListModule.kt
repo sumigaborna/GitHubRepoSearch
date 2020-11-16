@@ -14,7 +14,7 @@ import retrofit2.Retrofit
 val repoListModule = module {
     factory { provideRepoListInterface(get(named(REPO_LIST_RETROFIT))) }
     factory { RepoListInteractor(get()) }
-    viewModel { RepoListViewModel(get()) }
+    single { RepoListViewModel(get()) }
     factory { (repoListItemListener:RepoListItemListener)->RepoListRecyclerAdapter(repoListItemListener) }
 }
 
