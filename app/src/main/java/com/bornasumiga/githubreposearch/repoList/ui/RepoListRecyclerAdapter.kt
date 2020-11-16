@@ -10,7 +10,7 @@ import com.bornasumiga.githubreposearch.repoList.data.RepoListUI
 import com.bornasumiga.githubreposearch.repoList.data.RepoListUIItem
 import kotlinx.android.synthetic.main.item_repository.view.*
 
-class RepoListRecyclerAdapter : RecyclerView.Adapter<RepoListRecyclerAdapter.RepoListViewHolder>(){
+class RepoListRecyclerAdapter(private val clickListener: RepoListItemListener) : RecyclerView.Adapter<RepoListRecyclerAdapter.RepoListViewHolder>(){
 
     private var repoList = RepoListUI(emptyList())
 
@@ -32,7 +32,7 @@ class RepoListRecyclerAdapter : RecyclerView.Adapter<RepoListRecyclerAdapter.Rep
     override fun onBindViewHolder(holder: RepoListViewHolder, position: Int) {
         holder.bind(repoList.items[position])
         holder.itemView.setOnClickListener {
-            //TODO: LOGIC FOR OPENING DETAILS OF REPO
+            clickListener.onItemClick(repoList.items[position].id)
         }
     }
 
