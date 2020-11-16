@@ -1,6 +1,7 @@
 package com.bornasumiga.githubreposearch.repoList.data
 
 import com.bornasumiga.githubreposearch.R
+import com.bornasumiga.githubreposearch.app.common.localizeDate
 
 data class RepoListResponse(
     val total_count : Int,
@@ -29,7 +30,7 @@ data class RepoListUIItem(
 fun provideRepoListUI(repoListResponse: RepoListResponse):RepoListUI{
     val items = mutableListOf<RepoListUIItem>()
     repoListResponse.items.forEach {
-        items.add(RepoListUIItem(it.id,it.full_name,it.updated_at, R.layout.item_repository))
+        items.add(RepoListUIItem(it.id,it.full_name, localizeDate(it.updated_at), R.layout.item_repository))
     }
     return RepoListUI(items)
 }
