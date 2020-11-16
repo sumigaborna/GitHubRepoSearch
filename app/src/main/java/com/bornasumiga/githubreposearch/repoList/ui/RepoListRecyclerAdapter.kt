@@ -41,7 +41,7 @@ class RepoListRecyclerAdapter(private val clickListener: RepoListItemListener) :
     inner class RepoListViewHolder(view: View) : RecyclerView.ViewHolder(view){
         fun bind(item:RepoListUIItem){
             itemView.tvItemRepoName.text = item.repoName
-            itemView
+            itemView.tvRepoUpdatedAt.text = item.lastUpdateTime
         }
     }
 }

@@ -6,18 +6,17 @@ import com.bornasumiga.githubreposearch.app.base.BaseViewModel
 import com.bornasumiga.githubreposearch.repoList.data.RepoListUI
 import com.bornasumiga.githubreposearch.repoList.data.provideRepoListUI
 import com.bornasumiga.githubreposearch.repoList.interactor.RepoListInteractor
+import io.reactivex.Observable
 
 class RepoListViewModel(private val interactor: RepoListInteractor) : BaseViewModel(){
 
     private val _repoListData = MutableLiveData<RepoListUI>()
     val repoListData : LiveData<RepoListUI> = _repoListData
 
-    fun getRepoList(repoName:String) =
-        addDisposable(
+    fun getRepoList(repoName:String) : Observable<RepoListUI> =
             interactor
             .getReposByName(repoName)
             .map { provideRepoListUI(it) }
             .doOnNext { _repoListData.value = it }
-            .subscribe()
-        )
+
 }
