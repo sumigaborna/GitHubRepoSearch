@@ -2,12 +2,14 @@ package com.bornasumiga.githubreposearch.repoList.ui
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bornasumiga.githubreposearch.R
+import com.bornasumiga.githubreposearch.app.common.KEY_ITEM_ID
 import com.bornasumiga.githubreposearch.app.common.hideProgressBar
 import com.bornasumiga.githubreposearch.app.common.showFragment
 import com.bornasumiga.githubreposearch.app.common.showProgressBar
@@ -38,7 +40,6 @@ class RepoListActivity : AppCompatActivity(), RepoListItemListener {
     }
 
     private fun initUI() {
-
         rvRepoList.adapter = recyclerAdapter
         rvRepoList.layoutManager = LinearLayoutManager(this)
         //Setting search logic
@@ -61,7 +62,9 @@ class RepoListActivity : AppCompatActivity(), RepoListItemListener {
     }
 
     override fun onItemClick(itemId:Int) {
-        showFragment(R.id.repoListFragmentContainer, RepoDetailsFragment(), true)
+        val bundle = Bundle()
+        bundle.putInt(KEY_ITEM_ID,itemId)
+        showFragment(R.id.repoListFragmentContainer, RepoDetailsFragment(), true,bundle)
     }
 }
 
