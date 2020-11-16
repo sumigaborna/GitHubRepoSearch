@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bornasumiga.githubreposearch.R
 import com.bornasumiga.githubreposearch.app.common.hideProgressBar
+import com.bornasumiga.githubreposearch.app.common.showFragment
 import com.bornasumiga.githubreposearch.app.common.showProgressBar
 import com.bornasumiga.githubreposearch.repoList.view_model.RepoListViewModel
 import kotlinx.android.synthetic.main.activity_repo_list.*
@@ -60,7 +61,7 @@ class RepoListActivity : AppCompatActivity(), RepoListItemListener {
     }
 
     override fun onItemClick(itemId:Int) {
-        //TODO: OPEN FRAGMENT FOR DETAILS FRAGMENT
+        showFragment(R.id.repoListFragmentContainer, RepoDetailsFragment(), true)
     }
 }
 
